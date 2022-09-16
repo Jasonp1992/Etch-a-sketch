@@ -1,0 +1,16 @@
+.grid-square {
+    margin: 0;
+    height: 20px;
+    width: 20px;
+    background-color: salmon;
+    border: solid black 1px;
+}
+
+.grid-square:hover {
+    background-color: aqua;
+}
+
+.canvas {
+    display: flex;
+    flex-wrap: wrap;
+}
