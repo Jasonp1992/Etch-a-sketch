@@ -2,12 +2,14 @@
 const defaultSize = 16
 
 makeSquares(defaultSize)
+setHeightWidth(defaultSize)
 
 function makeSquares(num) {
     const canvas = document.querySelector('.canvas');
     for (let i = 0; i < num; i++) {
         const row = document.createElement('div');
         row.classList.add(`row${i}`);
+        // row.classList.add('grid-square')
         canvas.appendChild(row);
         for (let j = 0; j < num; j++) {
             const row = document.querySelector(`.row${i}`);
@@ -36,14 +38,23 @@ function newSize() {
     canvas.innerHTML = '';
         //check if input is less then 100
     if (input > 100) {
-        alert('sorry input to high choose a smaller number')
+        alert('Sorry input to high. Try a smaller number')
         makeSquares(defaultSize)
         return;
-    }
+    } else if (input < 0) {
+        alert('Sorry that numbers to small. Try a bigger Number')
+        makeSquares(defaultSize)
+        return;
+    };
         //if less make new grid
     makeSquares(input);
+    setHeightWidth(input);
 };
 
-//function to check if div is empty
-
-
+function setHeightWidth(num) {
+    let gridSquare = document.querySelectorAll('.grid-square');
+    for (let i = 0; i < gridSquare.length; i++) {
+        gridSquare[i].style.width = `${35/num}rem`;
+        gridSquare[i].style.height = `${35/num}rem`;
+    }
+}
