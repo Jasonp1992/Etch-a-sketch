@@ -58,3 +58,11 @@ function setHeightWidth(num) {
         gridSquare[i].style.height = `${35/num}rem`;
     }
 }
+
+    const button = document.querySelector('.clear-button');
+    button.addEventListener('click', function() {
+        const canvas = document.querySelector('.canvas');
+        canvas.innerHTML = '';
+        makeSquares(defaultSize);
+        setHeightWidth(defaultSize);
+    })
