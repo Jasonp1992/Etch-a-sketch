@@ -4,6 +4,14 @@ const defaultSize = 16
 makeSquares(defaultSize)
 setHeightWidth(defaultSize)
 
+const button = document.querySelector('.clear-button');
+button.addEventListener('click', function() {
+    const canvas = document.querySelector('.canvas');
+    canvas.innerHTML = '';
+    makeSquares(defaultSize);
+    setHeightWidth(defaultSize);
+});
+
 function makeSquares(num) {
     const canvas = document.querySelector('.canvas');
     for (let i = 0; i < num; i++) {
@@ -59,10 +67,5 @@ function setHeightWidth(num) {
     }
 }
 
-    const button = document.querySelector('.clear-button');
-    button.addEventListener('click', function() {
-        const canvas = document.querySelector('.canvas');
-        canvas.innerHTML = '';
-        makeSquares(defaultSize);
-        setHeightWidth(defaultSize);
-    })
+
+

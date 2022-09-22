@@ -13,16 +13,16 @@
     </div>
 
     <div class="middle-section">
-        <div class="canvas">
+        <div class="controles">
+            <p>Select Size</p>
+            <input type="number" id="square-input" name="square-num">
+            <button type="button" onclick="newSize()">Enter</button>
+            <p>Color Select</p>
+            <input type="color" class="color-picker">
+            <button type="button" class="clear-button">Reset</button>
         </div>
 
-        <div class="controles">
-            <form class="canvas-size">
-                <label for="square-input">Canvas Size</label>
-                <input type="number" id="square-input" name="square-num">
-                <button type="button" onclick="newSize()">click me</button>
-            </form>
-            <button type="button" class="clear-button">Reset</button>
+        <div class="canvas">
         </div>
     </div>
 
